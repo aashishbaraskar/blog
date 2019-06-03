@@ -9,7 +9,7 @@ from taggit.models import Tag
 from django.db.models import Count
 # Create your views here.
 
-
+# all post list
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
     tag = None
@@ -35,6 +35,7 @@ def post_list(request, tag_slug=None):
 #     paginate_by = 1
 #     template_name = 'blog/post/list.html'
 
+# Read post details
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
                         status='published',
